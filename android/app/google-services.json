@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "452281960610",
+    "firebase_url": "https://noodor-7279.firebaseio.com",
+    "project_id": "noodor-7279",
+    "storage_bucket": "noodor-7279.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452281960610:android:11935088f9bdb1be56effb",
+        "android_client_info": {
+          "package_name": "io.flutter.app.FlutterApplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "452281960610-b7pangep990pvlc5nkpuo02uu5pomn6o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH2LLnZTmHqoE4pWST4ZinGIgjWgaj_7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "452281960610-b7pangep990pvlc5nkpuo02uu5pomn6o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

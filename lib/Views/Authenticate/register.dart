@@ -17,19 +17,24 @@ class _RegisterState extends State<Register> {
   // text field state
   String email = '';
   String password = '';
+  String repassword = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[100],
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.brown[400],
+        backgroundColor: Theme.of(context).primaryColor,
         elevation: 0.0,
-        title: Text('Sign up to Brew Crew'),
+        title: Text('Regístrate'),
         actions: <Widget>[
           FlatButton.icon(
-            icon: Icon(Icons.person),
-            label: Text('Sign In'),
+            icon: Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+            label:
+                Text('Iniciar Sesión', style: TextStyle(color: Colors.white)),
             onPressed: () => widget.toggleView(),
           ),
         ],
@@ -40,27 +45,54 @@ class _RegisterState extends State<Register> {
           key: _formKey,
           child: Column(
             children: <Widget>[
-              SizedBox(height: 20.0),
+              SizedBox(height: 30.0),
               TextFormField(
-                validator: (val) => val.isEmpty ? 'Enter an email' : null,
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person),
+                  hintText: 'email@email.com',
+                  labelText: 'Email *',
+                ),
+                validator: (val) =>
+                    val.isEmpty ? 'Ingresa un email válido' : null,
                 onChanged: (val) {
                   setState(() => email = val);
                 },
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 30.0),
               TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.security),
+                  hintText: '',
+                  labelText: 'Contraseña *',
+                ),
                 obscureText: true,
-                validator: (val) =>
-                    val.length < 6 ? 'Enter a password 6+ chars long' : null,
+                validator: (val) => val.length < 6
+                    ? 'Ingrese una contraseña de por lo menos 6 caracteres'
+                    : null,
                 onChanged: (val) {
                   setState(() => password = val);
                 },
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 30.0),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.security),
+                  hintText: '',
+                  labelText: 'Reingrese su contraseña *',
+                ),
+                obscureText: true,
+                validator: (val) => val.length < 6
+                    ? 'Ingresa una contraseña de por lo menos 6 caracteres'
+                    : val != password ? 'Las constraseñas no coinciden' : null,
+                onChanged: (val) {
+                  setState(() => repassword = val);
+                },
+              ),
+              SizedBox(height: 30.0),
               RaisedButton(
-                  color: Colors.pink[400],
+                  color: Theme.of(context).primaryColor,
                   child: Text(
-                    'Register',
+                    'Registrar',
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () async {
@@ -69,7 +101,8 @@ class _RegisterState extends State<Register> {
                           email, password);
                       if (result == null) {
                         setState(() {
-                          error = 'Please supply a valid email';
+                          error =
+                              'Ups! Algo anda mal o la información proporcionada no es correcta. Vuelve a intentar.';
                         });
                       }
                     }

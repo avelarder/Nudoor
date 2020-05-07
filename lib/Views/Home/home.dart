@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:testingapp/Views/Home/delivery.dart';
 import 'package:testingapp/Widgets/Carousel_Template.dart';
+import 'package:testingapp/Services/Auth.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -22,6 +23,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final AuthService _auth = AuthService();
+
   int _selectedIndex = 0;
   int _currentTab = 0;
 
@@ -143,10 +146,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentTab,
-        onTap: (int value) {
+        onTap: (int value) async {
           setState(() {
             _currentTab = value;
           });
+          if (_currentTab == 2) {
+            await _auth.signOut();
+          }
         },
         items: [
           BottomNavigationBarItem(

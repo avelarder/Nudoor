@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:testingapp/Models/Carousel_Item.dart';
 import 'package:testingapp/Utils/DateHandler.dart';
+import 'package:testingapp/Models/HomeViewModel.dart';
+import 'package:testingapp/Models/NewsFeedModel.dart';
 
 class CarouselTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final carouselItems = Provider.of<HomeViewModel>(context);
+
     return Column(
       children: <Widget>[
         Padding(
@@ -39,9 +44,9 @@ class CarouselTemplate extends StatelessWidget {
           height: 300.0,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: carouselItems.length,
+            itemCount: carouselItems.newsFeeds.length,
             itemBuilder: (BuildContext context, int index) {
-              CarouselItem carouselItem = carouselItems[index];
+              NewsFeedModel carouselItem = carouselItems.newsFeeds[index];
               return Container(
                 margin: EdgeInsets.all(10.0),
                 width: 240.0,
@@ -79,7 +84,7 @@ class CarouselTemplate extends StatelessWidget {
                               ),
                               SizedBox(height: 2.0),
                               Text(
-                                DateHandler.dateToString(carouselItem.publishDate),
+                                DateHandler.dateToString(carouselItem.postedOn),
                                 style: TextStyle(
                                   fontSize: 12.0,
                                   fontWeight: FontWeight.w600,
@@ -104,12 +109,7 @@ class CarouselTemplate extends StatelessWidget {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
-                        child: Image(
-                          height: 180.0,
-                          width: 220.0,
-                          image: AssetImage(carouselItem.imageUrl),
-                          fit: BoxFit.cover,
-                        ),
+                        child: Image.network(carouselItem.thumbnail, fit: BoxFit.cover, width: 220, height: 180),
                       ),
                     )
                   ],

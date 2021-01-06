@@ -6,4 +6,5 @@ class HomeViewModel{
   final Stream<User> user;
 
   HomeViewModel({this.newsFeeds, this.user});
+
 }

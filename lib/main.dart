@@ -1,16 +1,16 @@
 import 'dart:convert';
 
-import 'package:testingapp/Models/HomeViewModel.dart';
-import 'package:testingapp/Models/NewsFeedModel.dart';
-import 'package:testingapp/views/wrapper.dart';
-import 'package:testingapp/services/auth.dart';
+import 'package:nudoor/Models/HomeViewModel.dart';
+import 'package:nudoor/Models/NewsFeedModel.dart';
+import 'package:nudoor/views/wrapper.dart';
+import 'package:nudoor/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:testingapp/Models/User.dart';
+import 'package:nudoor/Models/User.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'package:testingapp/Helpers/app_localizations.dart';
+import 'package:nudoor/Helpers/app_localizations.dart';
 
 void main() => runApp(MyApp());
 

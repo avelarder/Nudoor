@@ -1,4 +1,4 @@
-import 'package:testingapp/Services/Auth.dart';
+import 'package:nudoor/Services/Auth.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {

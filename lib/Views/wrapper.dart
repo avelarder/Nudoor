@@ -1,8 +1,8 @@
-import 'package:testingapp/Views/Home/home.dart';
-import 'package:testingapp/Views/Authenticate/authenticate.dart';
+import 'package:nudoor/Views/Home/Home.dart';
+import 'package:nudoor/Views/Authenticate/authenticate.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:testingapp/Models/User.dart';
+import 'package:nudoor/Models/User.dart';
 
 class Wrapper extends StatelessWidget {
   @override

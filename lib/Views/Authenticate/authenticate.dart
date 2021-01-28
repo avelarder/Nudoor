@@ -1,5 +1,5 @@
-import 'package:testingapp/Views/Authenticate/register.dart';
-import 'package:testingapp/Views/Authenticate/sign_in.dart';
+import 'package:nudoor/Views/Authenticate/register.dart';
+import 'package:nudoor/Views/Authenticate/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class Authenticate extends StatefulWidget {

@@ -7,5 +7,14 @@
   "home_icon_market": "Mercado",
   "home_icon_emergencies": "Emergencias",
   "home_icon_archives": "Archivo",
-  "home_icon_notifications": "Alertas"
+  "home_icon_notifications": "Alertas",
+  "view_surveys_title": "Encuestas",
+  "view_agreements_title": "Acuerdos",
+  "view_parcels_title": "Paquetes",
+  "view_delivery_title": "Delivery",
+  "view_news_title": "Noticias",
+  "view_market_title": "Mercado",
+  "view_emergencies_title": "Emergencias",
+  "view_archives_title": "Archivo",
+  "view_notifications_title": "Alertas"
 }

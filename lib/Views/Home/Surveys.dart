@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nudoor/Helpers/app_localizations.dart';
 
 class SurveysPage extends StatelessWidget {
 
@@ -6,7 +7,7 @@ class SurveysPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Delivery Route'),
+        title: Text(AppLocalizations.of(context).translate('view_surveys_title')),
       ),
       body: Center(
         child: RaisedButton(

@@ -1,4 +1,4 @@
-import 'package:testingapp/Models/User.dart';
+import 'package:nudoor/Models/User.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {

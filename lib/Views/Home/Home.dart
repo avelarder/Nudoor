@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:testingapp/Views/Home/delivery.dart';
-import 'package:testingapp/Views/Home/Surveys.dart';
-import 'package:testingapp/Views/Home/Agreements.dart';
-import 'package:testingapp/Views/Home/Parcels.dart';
-import 'package:testingapp/Views/Home/News.dart';
-import 'package:testingapp/Views/Home/Market.dart';
-import 'package:testingapp/Views/Home/Emergencies.dart';
-import 'package:testingapp/Views/Home/Archives.dart';
-import 'package:testingapp/Models/IconModel.dart';
-import 'package:testingapp/Widgets/Carousel_Template.dart';
-import 'package:testingapp/Services/Auth.dart';
-import 'package:testingapp/Helpers/app_localizations.dart';
+import 'package:nudoor/Views/Home/Delivery.dart';
+import 'package:nudoor/Views/Home/Surveys.dart';
+import 'package:nudoor/Views/Home/Agreements.dart';
+import 'package:nudoor/Views/Home/Parcels.dart';
+import 'package:nudoor/Views/Home/News.dart';
+import 'package:nudoor/Views/Home/Market.dart';
+import 'package:nudoor/Views/Home/Emergencies.dart';
+import 'package:nudoor/Views/Home/Archives.dart';
+import 'package:nudoor/Models/IconModel.dart';
+import 'package:nudoor/Widgets/Carousel_Template.dart';
+import 'package:nudoor/Services/Auth.dart';
+import 'package:nudoor/Helpers/app_localizations.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -175,21 +175,21 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.search,
               size: 30.0,
             ),
-            title: SizedBox.shrink(),
+            label:""
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.local_pizza,
               size: 30.0,
             ),
-            title: SizedBox.shrink(),
+            label:""
           ),
           BottomNavigationBarItem(
             icon: CircleAvatar(
               radius: 15.0,
               backgroundImage: NetworkImage('http://i.imgur.com/zL4Krbz.jpg'),
             ),
-            title: SizedBox.shrink(),
+            label: "",
           )
         ],
       ),

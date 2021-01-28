@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:testingapp/Models/Carousel_Item.dart';
-import 'package:testingapp/Utils/DateHandler.dart';
-import 'package:testingapp/Models/HomeViewModel.dart';
-import 'package:testingapp/Models/NewsFeedModel.dart';
+import 'package:nudoor/Models/Carousel_Item.dart';
+import 'package:nudoor/Utils/DateHandler.dart';
+import 'package:nudoor/Models/HomeViewModel.dart';
+import 'package:nudoor/Models/NewsFeedModel.dart';
 
 class CarouselTemplate extends StatelessWidget {
   @override

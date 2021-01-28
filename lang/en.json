@@ -7,5 +7,14 @@
   "home_icon_market": "Market",
   "home_icon_emergencies": "S.O.S",
   "home_icon_archives": "Archives",
-  "home_icon_notifications": "Alerts"
+  "home_icon_notifications": "Alerts",
+  "view_surveys_title": "Surveys",
+  "view_agreements_title": "Agreements",
+  "view_parcels_title": "Parcels",
+  "view_delivery_title": "Delivery",
+  "view_news_title": "News",
+  "view_market_title": "Market",
+  "view_emergencies_title": "S.O.S",
+  "view_archives_title": "Archive",
+  "view_notifications_title": "Alerts"
 }

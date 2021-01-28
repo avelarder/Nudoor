@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:testingapp/Views/Home/delivery.dart';
+import 'package:testingapp/Views/Home/Surveys.dart';
+import 'package:testingapp/Views/Home/Agreements.dart';
+import 'package:testingapp/Views/Home/Parcels.dart';
+import 'package:testingapp/Views/Home/News.dart';
+import 'package:testingapp/Views/Home/Market.dart';
+import 'package:testingapp/Views/Home/Emergencies.dart';
+import 'package:testingapp/Views/Home/Archives.dart';
+import 'package:testingapp/Models/IconModel.dart';
 import 'package:testingapp/Widgets/Carousel_Template.dart';
 import 'package:testingapp/Services/Auth.dart';
+import 'package:testingapp/Helpers/app_localizations.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -27,20 +36,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int _selectedIndex = 0;
   int _currentTab = 0;
+  List<IconModel> _icons = [];
 
-  List<IconData> _icons = [
-    FontAwesomeIcons.poll,
-    FontAwesomeIcons.handshake,
-    FontAwesomeIcons.shippingFast,
-    FontAwesomeIcons.hamburger,
-    FontAwesomeIcons.newspaper,
-    FontAwesomeIcons.balanceScale,
-    FontAwesomeIcons.ambulance,
-    FontAwesomeIcons.archive,
-    FontAwesomeIcons.bell,
-  ];
 
   Widget _buildIcon(int index) {
+
+
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -48,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         });
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => DeliveryPage()),
+          MaterialPageRoute(builder: (context) => _icons[index].landing),
         );
       },
       child: Column(
@@ -64,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(30.0),
               ),
               child: Icon(
-                _icons[index],
+                _icons[index].icon,
                 size: 30.0,
                 color: _selectedIndex == index
                     ? Theme.of(context).primaryColor
@@ -75,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 10,
             ),
             Text(
-              'Opcion',
+              _icons[index].title,
               style: TextStyle(
                 color: Colors.grey,
               ),
@@ -86,6 +87,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+
+    _icons = [
+      IconModel(icon: FontAwesomeIcons.poll, title: AppLocalizations.of(context).translate('home_icon_surveys'), landing: SurveysPage()),
+      IconModel(icon: FontAwesomeIcons.handshake, title: AppLocalizations.of(context).translate('home_icon_agreements'), landing: AgreementsPage()),
+      IconModel(icon: FontAwesomeIcons.shippingFast, title: AppLocalizations.of(context).translate('home_icon_parcels'), landing: ParcelsPage()),
+      IconModel(icon: FontAwesomeIcons.hamburger, title: AppLocalizations.of(context).translate('home_icon_delivery'), landing: DeliveryPage()),
+      IconModel(icon: FontAwesomeIcons.newspaper, title: AppLocalizations.of(context).translate('home_icon_news'), landing: NewsPage()),
+      IconModel(icon: FontAwesomeIcons.balanceScale, title: AppLocalizations.of(context).translate('home_icon_market'), landing: MarketPage()),
+      IconModel(icon: FontAwesomeIcons.ambulance, title: AppLocalizations.of(context).translate('home_icon_emergencies'), landing: EmergenciesPage()),
+      IconModel(icon: FontAwesomeIcons.archive, title:  AppLocalizations.of(context).translate('home_icon_archives'), landing: ArchivesPage()),
+      IconModel(icon: FontAwesomeIcons.bell, title:  AppLocalizations.of(context).translate('home_icon_notifications'), landing: DeliveryPage()),
+    ];
+
     return Scaffold(
       body: SafeArea(
         child: ListView(

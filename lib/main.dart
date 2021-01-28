@@ -8,6 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testingapp/Models/User.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+import 'package:testingapp/Helpers/app_localizations.dart';
 
 void main() => runApp(MyApp());
 
@@ -48,6 +51,24 @@ class MyApp extends StatelessWidget {
       child: StreamProvider<User>.value(
         value: AuthService().user,
         child: MaterialApp(
+          supportedLocales: [
+            Locale('en', 'US'),
+            Locale('es', 'US'),
+          ],
+          localizationsDelegates: [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          localeResolutionCallback: (locale, supportedLocales) {
+            for (var supportedLocale in supportedLocales) {
+              if (supportedLocale.languageCode == locale.languageCode &&
+                  supportedLocale.countryCode == locale.countryCode) {
+                return supportedLocale;
+              }
+            }
+            return supportedLocales.first;
+          },
           home: Wrapper(),
         ),
       ),

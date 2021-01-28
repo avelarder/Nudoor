@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DeliveryPage extends StatelessWidget {
+class MarketPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
